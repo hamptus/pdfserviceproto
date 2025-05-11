@@ -1,0 +1,16 @@
+edition = "2023";
+package pdfservice;
+
+option go_package = "proto/pb";
+
+service PDFService {
+  rpc GeneratePDF (PDFRequest) returns (PDFResponse);
+}
+
+message PDFRequest {
+  string html_content = 1;
+}
+
+message PDFResponse {
+  bytes pdf_content = 1;
+}
